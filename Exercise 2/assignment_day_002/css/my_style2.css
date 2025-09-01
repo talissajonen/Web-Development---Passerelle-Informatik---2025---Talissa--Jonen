@@ -1,0 +1,111 @@
+h1 {
+  background-color: #f4b8c3ff; 
+  padding: 4px; 
+}
+
+em {
+  background-color: #fed7deff;
+  color: #ee4b6aff; 
+  padding: 8px;     
+  font-style: normal; 
+}
+
+h2 {
+  background-color: #f4b8c3ff; 
+  padding: 4px; 
+}
+
+#pika1 {
+  float: right;              
+  border: 3px solid #ea261fff;     
+}
+
+#pika1:hover {
+  border-color: #e6d460ff;    
+}
+
+span[title="first evolution"]  {
+  background-color: #e6d460ff;      
+  padding: 3px;                
+  border-bottom: 3px solid #ee4b6aff;
+}
+
+span[title="evolution 2"]  {
+  background-color: #e6d460ff;      
+  padding: 3px;                
+  border-bottom: 3px solid #ee4b6aff;
+  border-right: 3px solid #ee4b6aff; 
+}
+
+span[title="evolution 3"]  {
+  background-color: #e6d460ff;      
+  padding: 3px;                
+  border-bottom: 3px solid #ee4b6aff;
+  border-right: 3px solid #ee4b6aff; 
+  border-top: 3px solid #ee4b6aff;
+ 
+}
+
+ul.evolution {
+  background-color: #e6d460ff;      
+  padding: 0px 25px;                
+  border-right: 4px solid #010001ff; 
+  border-bottom: 4px solid #010001ff;
+  list-style-position: inside;   
+}
+
+ul.evolution ul li {
+  color: #ee4b6aff; 
+}
+
+#pika2 {
+  float: right;              
+  border: 3px solid #ea261fff;    
+  width: 100px;   
+  height: auto;   
+}
+
+table {
+  border: 6px solid #f4b8c3ff;                   
+}
+
+table td {
+  border: 1px solid #f4b8c3ff;        
+  padding: 10px;                
+}
+
+#footer a:hover {
+  text-decoration-style: solid;     
+  text-decoration-color: #e6d460ff; 
+}
+
+#footer a {
+  text-decoration: underline dotted; 
+  text-decoration-thickness: 2px; 
+  text-underline-offset: 3px;
+  text-decoration-color: #e6d460ff;
+}
+
+
+  /*
+    Colors used
+
+    CSS HEX
+    --bright-pink-crayola: #ee4b6aff;
+    --pink: #f4b8c3ff;
+    --black: #010001ff;
+    --flax: #f2e47dff;
+    --arylide-yellow: #e6d460ff;
+    --mimi-pink: #fed7deff;
+    --red-cmyk: #ea261fff;
+
+     CSS HSL
+    --bright-pink-crayola: hsla(349, 83%, 61%, 1);
+    --pink: hsla(349, 73%, 84%, 1);
+    --black: hsla(300, 100%, 0%, 1);
+    --flax: hsla(53, 82%, 72%, 1);
+    --arylide-yellow: hsla(52, 73%, 64%, 1);
+    --mimi-pink: hsla(349, 95%, 92%, 1);
+    --red-cmyk: hsla(2, 83%, 52%, 1);
+
+*/
