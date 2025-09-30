@@ -1,0 +1,11 @@
+let num3 = 1; 
+console.info(typeof num3); 
+let num4 = false; 
+console.log("num == false ::", num3 ==num4);
+console.log("num == false ::", num3 ===num4);
+console.log(num3 === false);
+console.log(num3 === true);
+console.log(num3);
+console.log(!num3);
+console.log(num != true);
+console.log(num !== true);

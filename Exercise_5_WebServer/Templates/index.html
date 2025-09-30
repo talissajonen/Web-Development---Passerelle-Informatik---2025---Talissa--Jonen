@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"> 
+    <title> My first page - Web Development Passerelle Informatik 2025 </title>
+<script src="/js/variables.js"></script>
+<script src="/js/variables2.js"></script>
+<script src="/js/compare.js"></script>
+<script src="/js/function.js"></script>
+ <!--     <script src="control.js"></script>  -->
+    </head>
+
+    <body>
+         <!--   To remember: <b>: only makes the text bold (purely visual style).
+                <strong>: also makes the text bold, but with semantic meaning 
+                → it indicates that the text is important.  
+                
+                <i>: only makes the text italic (visual style).
+                <em>: also makes the text italic, but with semantic meaning 
+                 → indicates emphasis (something spoken with different intonation).
+         -->
+        <h1 id="top"> Hello, this is my <strong>first page!</strong>
+        </h1>
+
+        <p> I created this page to learn more about <em>html elements</em>
+        </p>
+
+        <br> 
+
+        <h2> This page has no specific content yet 
+        </h2>
+
+        <p> At the first exercise for my class, I am learning about some HTML elements </p>
+            
+            <h3> The first ones I'm learning are: 
+            </h3>
+
+               <ul>
+                    <li> Paragraphs and line breaks </li>
+                    <li> Bolds and emphasised </li>
+                    <li> Lists (orderd and unordered) </li> 
+                    <li> Links and Anchors (local and external) </li> 
+                    <li> Images </li> 
+                    <li> Tables </li> 
+                    <li> Containers (div, span) </li> 
+                </ul>
+
+            <h3> I will be updating the content of this website with each new lesson. I will also learn about: 
+            </h3>
+              <ol>
+                    <li>CSS </li>
+                    <li>and much more!</li> 
+              </ol>
+           
+            <h3>
+                <a href="/page2.html">Check out my second page for travel photos and adventures!</a>                
+            </h3>
+         
+            <!-- While inserting my first photo, I learned that <figure> groups an image
+                        and <figcaption> adds its caption -->
+
+            <figure>    
+                <img src="/img/Foto1.jpg" alt="One of my travel photos" width="200"> 
+                <figcaption>“Intellectual growth should commence at birth and cease only at death.” - Albert Einstein</figcaption>
+            </figure> 
+
+            <h3> And here's my first table: </h3>
+        <table border="1">
+            <tr>
+                <th>Passerelle</th>
+                <th>2025</th>
+            </tr>
+            <tr>
+                <td>Web Development</td>
+                <td>HTML, CSS...</td>
+            </tr>
+            <tr>
+                <td>OS</td>
+                <td>Windows, Linux...</td>
+            </tr>
+        </table>
+
+        <div> 
+            <h2> Contact </h2> 
+            <p> Email: <span style="color:blue;">Soon Available</span></p> 
+        </div>
+       
+        <p><a href="#top">Back to top</a></p>
+<hr>
+
+ <!-- <script src="guessing_game.js"></script>-->
+
+ <h2>Enviar mensagem</h2>
+<form action="/adicionar" method="POST" accept-charset="UTF-8">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <br><br>
+    <label for="mensagem">Mensagem:</label>
+    <input type="text" id="mensagem" name="mensagem" required>
+    <br><br>
+    <button type="submit">Enviar</button>
+</form>
+
+    </body>
+</html>
