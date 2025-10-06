@@ -1,0 +1,93 @@
+/* Container - Menu and Content */ 
+.container {
+    display: flex; 
+}
+
+/* Menu */ 
+
+.menu {
+  width: 250px; 
+}
+
+.menu h1 {
+    text-align: center;
+}
+
+.menu a {
+  color: black; 
+  display: block; 
+  padding: 12px; 
+  text-decoration: none; 
+  text-align: left;
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: #dbdacd;
+  color: white;
+}
+
+/* Submenu */ 
+
+.submenu {
+    display: block; 
+}
+
+.submenu a {
+    padding-left: 25px;
+} 
+
+main {
+    flex: 1;                   
+    display: flex;
+    flex-direction: column;    
+}
+
+/* Main Image Index */ 
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+/* Gallery */ 
+
+#gallery {
+    flex: 1; 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    overflow:hidden; 
+}
+
+#gallery img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+#gallery img:hover {
+    transform: scale(1.066);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  color: #000000;
+}

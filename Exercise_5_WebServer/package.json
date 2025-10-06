@@ -1,0 +1,20 @@
+{
+    "name": "02_test_express",
+    "version": "0.0.1",
+    "description": "This is my new webserver with express js",
+    "keywords": [
+        "express",
+        "webserver"
+    ],
+    "license": "ISC",
+    "author": "talissa",
+    "type": "commonjs",
+    "main": "app.js",
+    "scripts": {
+        "start": "node --watch app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "express": "^5.1.0"
+    }
+}
