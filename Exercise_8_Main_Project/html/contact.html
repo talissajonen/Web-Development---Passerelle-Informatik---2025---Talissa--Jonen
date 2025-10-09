@@ -1,28 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/main.css" media="screen" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+  <title>Contact Form</title>
 </head>
 
 <body>
-  <div class="menu">
-    <h1>Photographer</h1>
-    <a href="../html/index.html">Home</a>
-    <a href="../html/gallery.html">Gallery</a>
-    <div class="submenu">
-      <a href="../html/weddings-a.html">Wedding A</a>
-      <a href="../html/weddings-b.html">Wedding B</a>
-      <a href="../html/weddings-c.html">Wedding C</a>
-    </div>
-    <a href="../html/contact.html" class="active">Contact</a>
-    <a href="../html/about.html">About me</a>
-  </div>
+  <div class="container">
+    <nav class="menu">
+      <h1><a href="/">Photographer</a></h1>
+      <a href="/">Home</a>
+      <a href="/gallery">Gallery</a>
+      <div class="submenu">
+        <a href="/weddings-a">Wedding A</a>
+        <a href="/weddings-b">Wedding B</a>
+        <a href="/weddings-c">Wedding C</a>
+      </div>
+      <a href="/contact" class="active">Contact</a>
+      <a href="/about">About me</a>
+    </nav>
+    <form class="contact-form" id="contact-form">
+      <h2>Contact us today!</h2>
+      <p class="contact-text">Share with us your idea: what is the type of the occasion/event, how many people will be there, how's the type of
+        photos you're thinking about, if you're interested in recording too and how much time of cover you would like.
+        We're excited to hear you and to participate in your special moment or event!
+      </p>
 
+      <label for="nameid">Name:</label>
+      <input type="text" id="nameid" placeholder="Your name here" required name="name" />
+
+      <label for="phoneid">Phone Number:</label>
+      <input type="tel" id="phoneid" placeholder="(xx) xx xxx xx xx" name="phone" />
+
+      <label for="emailid">Email:</label>
+      <input type="email" id="emailid" placeholder="youremail@mail.com" name="email" required />
+
+      <label for="msgid">Let’s Hear Your Idea:</label>
+      <textarea id="msgid" placeholder="Write your idea here." name="message" required></textarea>
+
+      <input id="button" type="submit" class="send" value="Send" />
+      <p id="result"></p>
+    </form>
+  </div>
   <footer>
     &copy; 2025 Photographer. All rights reserved.
   </footer>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
 const gallery = document.getElementById('gallery');
-const heroImg = document.getElementById('hero-img');
+const lightbox = document.getElementById('lightbox');
+const lbImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('.close');
 
-// Img Array
+// Array de fotos
 const fotos = [
     '../gallery/Wedding A/photo1.jpg',
     '../gallery/Wedding A/photo2.jpg',
@@ -11,36 +13,29 @@ const fotos = [
     '../gallery/Wedding A/photo6.jpg',
     '../gallery/Wedding A/photo7.jpg',
     '../gallery/Wedding A/photo8.jpg',
-    '../gallery/Wedding A/photo9.jpg',
-    '../gallery/Wedding B/photo1.jpg',
-    '../gallery/Wedding B/photo2.jpg',
-    '../gallery/Wedding B/photo3.jpg',
-    '../gallery/Wedding B/photo4.jpg',
-    '../gallery/Wedding B/photo5.jpg',
-    '../gallery/Wedding B/photo6.jpg',
-    '../gallery/Wedding B/photo7.jpg'
+    '../gallery/Wedding A/photo9.jpg'
 ];
 
-// Fill the gallery
+// Preencher galeria
 fotos.forEach(src => {
     const img = document.createElement('img');
     img.src = src;
     gallery.appendChild(img);
+
+    img.addEventListener('click', () => {
+        lbImg.src = src;
+        lightbox.style.display = 'flex';
+    });
 });
 
-// Hero image 
-let index = 0;
+// Fechar ao clicar no X
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
 
-function changeHero() {
-    heroImg.style.opacity = 0;
-    setTimeout(() => {
-        heroImg.src = fotos[index]; 
-        heroImg.style.opacity = 1;         
-        index = (index + 1) % fotos.length;
-    }, 500);
-}
-// First image initialized
-heroImg.src = fotos[0];
-
-// Change every 5 seconds
-setInterval(changeHero, 5000);
+// Fechar clicando fora da imagem
+lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
