@@ -1,61 +1,107 @@
+<!-- Declaring the type of document and the main language -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
+    <!-- Defining text enconding + responsiveness in mobile devices -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
     <title>Photographer Portfolio</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/main.css" media="screen">
+
+    <!-- Calling Fonts from Google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
+
+    <!-- Page Container -->
     <div class="container">
+
+        <!-- Page Navigation Menu -->
         <nav class="menu">
             <h1><a href="/">Photographer</a></h1>
-            <a href="/" class="active">Home</a>
-            <a href="/gallery">Gallery</a>
-            <div class="submenu">
-                <a href="/weddings-a">Wedding A</a>
-                <a href="/weddings-b">Wedding B</a>
-                <a href="/weddings-c">Wedding C</a>
-            </div>
-            <a href="/contact">Contact</a>
-            <a href="/about">About me</a>
+            <!-- <h1><a href="/"><img src="/logo.svg" alt="Photographer logo"></a></h1> -->
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li>
+                    <a href="/weddings">Weddings</a>
+                    <ul class="submenu">
+                        <li><a href="/weddingA">Wedding A</a></li>
+                        <li><a href="/weddingB">Wedding B</a></li>
+                        <li><a href="/weddingC">Wedding C</a></li>
+                    </ul>
+                </li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/about">About me</a></li>
+            </ul>
         </nav>
 
+        <!-- Main Section -->
         <main>
-            <section class="hero">
-                <img id="hero-img" src="../gallery/Wedding A/photo1.jpg" alt="Main Image">
+
+            <!-- Main Photo -->
+            <section class="main-photo">
+                <img id="mainPic" src="../gallery/WeddingA/photo1.jpg" alt="Main-Photo">
             </section>
-            <section class="content-index">
-                <h1>Photographer - Discover the world of the photography and the eternity of photos</h1>
-                <h2>Let yourself discover the magic and the beautiness of the photography. Eternize moments & keep
-                    wonderful memories.</h2>
-                           <div class="photo-row">
-        <img src="../gallery/Wedding A/photo2.jpg" alt="Photo 1">
-        <img src="../gallery/Wedding A/photo3.jpg" alt="Photo 2">
-        <img src="../gallery/Wedding A/photo4.jpg" alt="Photo 3">
-    </div>
+
+            <!-- Main Content Section -->
+            <section class="main-content">
+
+                <h2>Photographer - Discover the world of the photography and the eternity of photos</h2>
+                <h3>Let yourself discover the magic and the beautiness of the photography. Eternize moments & keep
+                    wonderful memories.</h3>
+
+                <section class="photo-row">
+                    <figure>
+                        <img src="../gallery/WeddingA/photo2.jpg"
+                            alt="Drinks and glasses on a glass table, close-up view seen from above">
+                        <figcaption>Drinks and glasses</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../gallery/WeddingA/photo3.jpg" alt="Drinks and glasses on a glass table, front view">
+                        <figcaption>Drinks and glasses</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../gallery/WeddingA/photo4.jpg"
+                            alt="Bride sitting on a chair holding the flowers in her hands">
+                        <figcaption>Bride holding flowers on a chair</figcaption>
+                    </figure>
+                </section>
+
                 <p>We work together to give you the best experience. Personalized work and strategy for your event. It
                     does not matter which type of event you are going to have, we can adjust your preferences so you can
                     have the best day eternized by our lenses. All this keeping your own style and personality. Check at
                     our menu our previous events and prices and click below to make your personalized inquire: </p>
+
                 <a href="/contact" class="button">Contact us!</a>
+
             </section>
+
         </main>
 
-
+    <!-- Close Page Container -->
     </div>
-    <script src="../js/index-gallery.js"></script>
+
+    <!-- Calling Script - change MainPic -->
+    <script src="../js/changeImage.js"></script>
+
+    <!-- Page Footer -->
     <footer>
-        &copy; 2025 Photographer. All rights reserved.
+        <p>&copy; 2025 Photographer. All rights reserved.</p>
     </footer>
+
 </body>
 
 </html>

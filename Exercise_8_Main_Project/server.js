@@ -17,20 +17,20 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'html', 'index.html'));
 });
 
-app.get('/gallery', (req, res) => {
-  res.sendFile(path.join(__dirname, 'html', 'gallery.html'));
+app.get('/weddings', (req, res) => {
+  res.sendFile(path.join(__dirname, 'html', 'weddings.html'));
 });
 
-app.get('/weddings-a', (req, res) => {
-  res.sendFile(path.join(__dirname, 'html', 'weddings-a.html'));
+app.get('/weddingA', (req, res) => {
+  res.sendFile(path.join(__dirname, 'html', 'weddingA.html'));
 });
 
-app.get('/weddings-b', (req, res) => {
-  res.sendFile(path.join(__dirname, 'html', 'weddings-b.html'));
+app.get('/weddingB', (req, res) => {
+  res.sendFile(path.join(__dirname, 'html', 'weddingB.html'));
 });
 
-app.get('/weddings-c', (req, res) => {
-  res.sendFile(path.join(__dirname, 'html', 'weddings-c.html'));
+app.get('/weddingC', (req, res) => {
+  res.sendFile(path.join(__dirname, 'html', 'weddingC.html'));
 });
 
 app.get('/contact', (req, res) => {

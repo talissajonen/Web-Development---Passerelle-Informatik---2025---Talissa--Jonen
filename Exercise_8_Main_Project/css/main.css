@@ -2,23 +2,34 @@ body {
   margin: 0;
 }
 
-/* Container - Menu and Content */
+/* Page Container */
 .container {
   display: flex;
-
 }
 
-/* Menu */
-
+/* -------------------------------------------------Navigation Menu - All Pages---------------------------------------------------------------- */
+                                               
+/* Menu Size */
 .menu {
   width: 250px;
 }
 
+/* Logo (inside Menu) - for now only an H1 */
 .menu h1 a {
   text-align: center;
   font-family: 'Tangerine', serif;
+  text-decoration: none;
+  color: black;
 }
 
+/* Removal on menu of default bullets and padding from lists */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu Links */
 .menu a {
   color: black;
   display: block;
@@ -29,22 +40,28 @@ body {
   font-weight: bold;
 }
 
+/* Hover and active effects - Menu */
 .menu a:hover,
 .menu a.active {
   background-color: #dbdacd;
-  color: #000000;
 }
 
-/* Submenu */
-
-.submenu {
-  display: block;
+/* Submenu (visibility and indent) */
+.menu ul li ul {
+  display: block;       
+  padding-left: 20px; 
 }
 
-.submenu a {
-  padding-left: 25px;
+/* Adjust of menu sublinks design */
+.menu ul li ul li a {
+  font-weight: normal; 
+  padding: 8px 12px;    
+  font-size: 0.95em;
 }
 
+/* ----------------------------------------------------------Main Content Index------------------------------------------------------------------ */
+
+/* Main */
 main {
   flex: 1;
   display: flex;
@@ -52,8 +69,7 @@ main {
 }
 
 /* Main Image Index */
-
-.hero {
+.main-photo {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -62,7 +78,7 @@ main {
   box-sizing: border-box;
 }
 
-.hero img {
+.main-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -70,8 +86,8 @@ main {
   opacity: 1;
 }
 
-/* Context/H1-P Index */
-.content-index {
+/* Content/H2-P Index */
+.main-content {
   position: relative;
   align-items: center;
   text-align: center;
@@ -80,21 +96,57 @@ main {
   box-sizing: border-box;
 }
 
-.content-index h1 {
+.main-content h2 {
   font-size: 40px;
   color: #9d9c8e;
   font-family: 'Tangerine', serif;
 }
 
-.content-index h2 {
+.main-content h3 {
   font-size: 20px;
   font-family: "Cormorant Garamond", serif;
 }
 
-.content-index p {
+.main-content p {
   font-size: 20px;
   font-family: "Cormorant Garamond", serif;
 }
+
+/* ------------------------------------------------Photo Row Index (inside Main Content)-------------------------------------------------------- */
+
+/* Photo-Row Index */
+.photo-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.photo-row figure {
+  flex: 1 1 calc(33% - 10px);
+  min-width: 200px;
+  text-align: center;
+}
+
+.photo-row img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.photo-row img:hover {
+  transform: scale(1.05);
+}
+
+.photo-row figcaption {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --------------------------------------------------Button Send Index (inside Main Content)--------------------------------------------------- */
 
 .button {
   border: none;
@@ -110,7 +162,7 @@ main {
   font-family: "Cormorant Garamond", serif;
 }
 
-/* Gallery Page */
+/* -------------------------------------------------------------Wedding Page (Gallery)---------------------------------------------------------- */
 
 #gallery {
   flex: 1;
@@ -131,8 +183,38 @@ main {
 #gallery img:hover {
   transform: scale(1.066);
 }
+/* ---------------------------------------------Lightbox - Weddings, WeddingA, WeddingB, WeddingC----------------------------------------------- */
 
-/* Contact Page */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------------Contact Page - Form-------------------------------------------------------------- */
 
 .contact-form {
   display: flex;
@@ -186,7 +268,7 @@ main {
   margin-bottom: 10px;
 }
 
-/* About page */
+/* ---------------------------------------------------------------About Page-------------------------------------------------------------------- */
 
 .about-page .top-title {
   margin-top: 5px;
@@ -204,10 +286,10 @@ main {
 
 .about-page .about-photo {
   display: block;
-  max-width: 50%;
-  height: auto;
-  margin: 0px;
-  border-radius: 0px;
+  max-width: 500px;      
+  width: 100%;          
+  height: auto;          
+  margin: 20px auto;     
 }
 
 .about-page .contact-text {
@@ -218,7 +300,9 @@ main {
   line-height: 1.6;
 }
 
-/* Footer */
+
+/* --------------------------------------------------------------All Pages - Footer------------------------------------------------------------- */
+
 footer {
   text-align: center;
   padding: 10px;
@@ -227,57 +311,4 @@ footer {
   align-items: center;
   font-family: "Cormorant Garamond", serif;
   background-color: #c0bfae;
-}
-
-
-/* Lightbox simples */
-#lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
-
-#lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 35px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* Photo-row */
-.photo-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-  /* se a tela for pequena, permite quebrar linha */
-  width: 100%;
-}
-
-.photo-row img {
-  width: calc((100% - 20px) / 3);
-  /* 3 fotos + 2 gaps de 10px */
-  height: auto;
-  object-fit: cover;
-}
-
-.photo-row img:hover {
-  transform: scale(1.033);
 }

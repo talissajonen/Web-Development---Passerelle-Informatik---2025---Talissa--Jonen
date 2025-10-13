@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page Title -->
-    <title>Photographer Portfolio</title>
+    <title>Gallery - Weddings</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/main.css" media="screen">
@@ -36,7 +36,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li>
-                    <a href="/weddings">Weddings</a>
+                    <a href="/weddings" class="active">Weddings</a>
                     <ul class="submenu">
                         <li><a href="/weddingA">Wedding A</a></li>
                         <li><a href="/weddingB">Wedding B</a></li>
@@ -44,30 +44,29 @@
                     </ul>
                 </li>
                 <li><a href="/contact">Contact</a></li>
-                <li><a href="/about" class="active">About me</a></li>
+                <li><a href="/about">About me</a></li>
             </ul>
         </nav>
 
-        <!-- Contact Form -->
-       <main class="contact-form about-page">
-            <h1 class="top-title">Photographer</h1>
-            <p class="about">A little bit about me:</p>
-            <img src="../gallery/WeddingA/photo1.jpg" alt="About me photo" class="about-photo">
-            <p class="contact-text">
-                I'm Photographer. I'm 26 years old and I live in Switzerland. I love to walk around, go to cafés, travel,
-                sci-fi movies and of course, my job! I love photography since I was a child. I studied Photography in
-                Germany and stayed here after my graduation. I would love to participate at your event/occasion, send me a
-                message via our contact form!
-            </p>
-        </main>
-    
-    <!-- Close Page Container -->
-    </div>
+        <!-- Gallery - All Wedding Fotos -->
+        <div class="gallery" id="gallery"></div>
 
-    <!-- Page Footer -->
+        <!-- Lightbox -->
+        <div id="lightbox">
+            <span class="close">&times;</span>
+            <img src="" alt="">
+        </div>
+   
+    <!-- Close Page Container -->
+    </div> 
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Photographer. All rights reserved.</p>
+        &copy; 2025 Photographer. All rights reserved.
     </footer>
+
+    <!-- Calling Script - Gallery -->
+    <script src="../js/gallery.js"></script>
 
 </body>
 

@@ -4,13 +4,13 @@ const lbImg = lightbox.querySelector('img');
 const closeBtn = lightbox.querySelector('.close');
 
 const fotos = [
-    '../gallery/Wedding B/photo1.jpg',
-    '../gallery/Wedding B/photo2.jpg',
-    '../gallery/Wedding B/photo3.jpg',
-    '../gallery/Wedding B/photo4.jpg',
-    '../gallery/Wedding B/photo5.jpg',
-    '../gallery/Wedding B/photo6.jpg',
-    '../gallery/Wedding B/photo7.jpg'
+    '../gallery/WeddingB/photo1.jpg',
+    '../gallery/WeddingB/photo2.jpg',
+    '../gallery/WeddingB/photo3.jpg',
+    '../gallery/WeddingB/photo4.jpg',
+    '../gallery/WeddingB/photo5.jpg',
+    '../gallery/WeddingB/photo6.jpg',
+    '../gallery/WeddingB/photo7.jpg'
 ];
 
 // Adiciona imagens à galeria
