@@ -3,6 +3,8 @@ const gallery = document.getElementById('gallery'); // the gallery container
 const lightbox = document.getElementById('lightbox'); // the overlay/lightbox
 const lbImg = lightbox.querySelector('img'); // the image inside the lightbox
 const closeBtn = lightbox.querySelector('.close'); // the close button
+const prevBtn = lightbox.querySelector('.prev'); // the previous foto button
+const nextBtn = lightbox.querySelector('.next'); // the next foto button
 
 // Array of photo URLs
 const photos = [
@@ -30,10 +32,12 @@ const photos = [
     '../gallery/WeddingC/photo6.jpg',
     '../gallery/WeddingC/photo7.jpg'
 ];
+let currentIndex = 0;
 
 // Function to open lightbox with clicked image
-function openLightbox(src) {
-    lbImg.src = src;
+function openLightbox(index) {
+    currentIndex = index;      // salva o índice
+    lbImg.src = photos[index]; // mostra a foto
     lightbox.style.display = 'flex';
 }
 
@@ -42,13 +46,28 @@ function closeLightbox() {
     lightbox.style.display = 'none';
 }
 
+// Function to show next photo lightbox
+function showNext() {
+    currentIndex = (currentIndex + 1) % photos.length; 
+    lbImg.src = photos[currentIndex];
+}
+
+// Function to show previous photo lightbox
+function showPrev() {
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    lbImg.src = photos[currentIndex];
+}
+
 // Fill gallery with images and add click events
-photos.forEach(src => {
-    const img = document.createElement('img'); // create image element
-    img.src = src; // set image source
-    img.addEventListener('click', () => openLightbox(src)); // click opens lightbox
-    gallery.appendChild(img); // add image to gallery
+photos.forEach((src, i) => {
+    const img = document.createElement('img'); 
+    img.src = src; 
+    img.addEventListener('click', () => openLightbox(i)); 
+    gallery.appendChild(img); 
 });
+
+
+// events lightbox
 
 // Close lightbox when clicking X button
 closeBtn.addEventListener('click', closeLightbox);
@@ -57,3 +76,7 @@ closeBtn.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => {
     if (e.target === lightbox) closeLightbox();
 });
+
+// 
+prevBtn.addEventListener('click', showPrev);
+nextBtn.addEventListener('click', showNext);

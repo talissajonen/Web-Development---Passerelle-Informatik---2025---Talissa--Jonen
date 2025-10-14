@@ -1,17 +1,27 @@
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Page Container */
 .container {
   display: flex;
+  
 }
 
 /* -------------------------------------------------Navigation Menu - All Pages---------------------------------------------------------------- */
                                                
 /* Menu Size */
 .menu {
-  width: 250px;
+  width: 20%;  
+  position: fixed; /* fix menu on screen even if scrolls */
+  top: 0;
+  left: 0;
+  height: 100vh; 
+  background-color: #f8f8f8; 
+  z-index: 100; /* guarantee it will stay on top of other elements */
 }
 
 /* Logo (inside Menu) - for now only an H1 */
@@ -33,7 +43,7 @@ body {
 .menu a {
   color: black;
   display: block;
-  padding: 12px;
+  padding: 1rem;
   text-decoration: none;
   text-align: left;
   font-family: "Cormorant Garamond", serif;
@@ -43,19 +53,19 @@ body {
 /* Hover and active effects - Menu */
 .menu a:hover,
 .menu a.active {
-  background-color: #dbdacd;
+  background-color: rgb(219, 218, 205);
 }
 
 /* Submenu (visibility and indent) */
 .menu ul li ul {
   display: block;       
-  padding-left: 20px; 
+  padding-left: 5%; 
 }
 
 /* Adjust of menu sublinks design */
 .menu ul li ul li a {
   font-weight: normal; 
-  padding: 8px 12px;    
+  padding: 0.5rem 0.8rem;    
   font-size: 0.95em;
 }
 
@@ -66,6 +76,7 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-left: 20%; /* Create space for the fixed menu */
 }
 
 /* Main Image Index */
@@ -74,7 +85,7 @@ main {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  padding: 10px;
+  padding: 1%; 
   box-sizing: border-box;
 }
 
@@ -92,23 +103,19 @@ main {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  padding: 10px;
+  padding: 1%;
   box-sizing: border-box;
 }
 
 .main-content h2 {
-  font-size: 40px;
-  color: #9d9c8e;
+  font-size: 2.5rem;
+  color: rgb(157, 156, 142);
   font-family: 'Tangerine', serif;
 }
 
-.main-content h3 {
-  font-size: 20px;
-  font-family: "Cormorant Garamond", serif;
-}
-
+.main-content h3,
 .main-content p {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: "Cormorant Garamond", serif;
 }
 
@@ -118,14 +125,13 @@ main {
 .photo-row {
   display: flex;
   justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 1.25%;
 }
 
 .photo-row figure {
-  flex: 1 1 calc(33% - 10px);
-  min-width: 200px;
+  flex: 1 1 32%; 
+  min-width: 20%;
   text-align: center;
 }
 
@@ -141,7 +147,7 @@ main {
 }
 
 .photo-row figcaption {
-  margin-top: 5px;
+  margin-top: 0.3%;
   font-size: 0.9rem;
   color: #666;
 }
@@ -151,12 +157,12 @@ main {
 .button {
   border: none;
   color: rgb(0, 0, 0);
-  padding: 15px 32px;
+  padding: 0.94rem 2rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
+  font-size: 1.25rem;
+  margin: 0.25rem 0.125rem;
   cursor: pointer;
   background-color: #dbdacd;
   font-family: "Cormorant Garamond", serif;
@@ -168,9 +174,10 @@ main {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
-  padding: 10px;
+  gap: 0.625%;
+  padding: 0.625%;
   overflow: hidden;
+  margin-left: 20%; /* Create space for the fixed menu */
 }
 
 #gallery img {
@@ -183,6 +190,7 @@ main {
 #gallery img:hover {
   transform: scale(1.066);
 }
+
 /* ---------------------------------------------Lightbox - Weddings, WeddingA, WeddingB, WeddingC----------------------------------------------- */
 
 #lightbox {
@@ -206,13 +214,29 @@ main {
 
 #lightbox .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 35px;
+  top: 1.25rem; 
+  right: 1.875rem;
+  font-size: 2.1875rem; 
   color: white;
   cursor: pointer;
   font-weight: bold;
 }
+
+/* Navigation right and left */
+#lightbox .prev,
+#lightbox .next {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    padding: 0.625rem;
+}
+
+#lightbox .prev { left: 1.25rem; }
+#lightbox .next { right: 1.25rem; }
 
 /* ------------------------------------------------------------Contact Page - Form-------------------------------------------------------------- */
 
@@ -222,18 +246,19 @@ main {
   flex-direction: column;
   max-width: 100%;
   background-color: #f8f8f8;
-  gap: 10px;
+  gap: 0.625rem;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 10px 10px 10px 10px;
+  margin: 0 0.625rem 0 20%;
   font-family: "Cormorant Garamond", serif;
+  text-align: center;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px;
-  font-size: 16px;
+  padding: 0.625rem;
+  font-size: 1rem; 
   width: 40%;
   box-sizing: border-box;
   font-family: "Cormorant Garamond", serif;
@@ -250,28 +275,27 @@ main {
 
 .contact-form input[type="submit"]:hover {
   background-color: #c0bfae;
-
 }
 
 .contact-form h2 {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem; 
   font-family: "Cormorant Garamond", serif;
 }
 
 .contact-text {
   width: 60%;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.6;
   font-family: "Cormorant Garamond", serif;
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 /* ---------------------------------------------------------------About Page-------------------------------------------------------------------- */
 
 .about-page .top-title {
-  margin-top: 5px;
+  margin-top: 0.3125rem; 
   font-size: 3em;
   font-family: 'Tangerine', serif;
   text-align: center;
@@ -279,36 +303,38 @@ main {
 
 .about-page .about {
   font-size: 1.5em;
-  margin-top: -40px;
+  margin-top: -2.5rem;
   font-family: 'Cormorant Garamond', serif;
   text-align: center;
 }
 
 .about-page .about-photo {
   display: block;
-  max-width: 500px;      
+  max-width: 31.25rem;    
   width: 100%;          
   height: auto;          
-  margin: 20px auto;     
+  margin: 1.25rem auto;   
 }
 
 .about-page .contact-text {
   font-size: 1em;
   width: 60%;
-  margin: 20px auto;
+  margin: 1.25rem auto;
   text-align: center;
   line-height: 1.6;
 }
 
 
 /* --------------------------------------------------------------All Pages - Footer------------------------------------------------------------- */
-
 footer {
+  position: relative;       
+  width: auto;
+  height: auto;           
   text-align: center;
-  padding: 10px;
-  font-size: 18px;
-  color: #000000;
-  align-items: center;
-  font-family: "Cormorant Garamond", serif;
-  background-color: #c0bfae;
+  padding: 0.625rem; 
+  background-color: rgb(192, 191, 174);
+  box-sizing: border-box;
+  z-index: 100;           
 }
+
+
