@@ -1,8 +1,12 @@
+// Get main elements from the page
 const gallery = document.getElementById('gallery');
 const lightbox = document.getElementById('lightbox');
 const lbImg = lightbox.querySelector('img');
 const closeBtn = lightbox.querySelector('.close');
+const prevBtn = lightbox.querySelector('.prev'); // the previous foto button
+const nextBtn = lightbox.querySelector('.next'); // the next foto button
 
+// List of image file paths
 const fotos = [
     '../gallery/WeddingC/photo1.jpg',
     '../gallery/WeddingC/photo2.jpg',
@@ -13,25 +17,26 @@ const fotos = [
     '../gallery/WeddingC/photo7.jpg'
 ];
 
-// Adiciona imagens à galeria
+// Create an <img> for each photo and add it to the gallery
 fotos.forEach(src => {
     const img = document.createElement('img');
     img.src = src;
     gallery.appendChild(img);
 
-    // Abre lightbox ao clicar
+
+    // Open lightbox when clicked
     img.addEventListener('click', () => {
         lbImg.src = src;
         lightbox.style.display = 'flex';
     });
 });
 
-// Fecha ao clicar no X
+// Close when click on "x"
 closeBtn.addEventListener('click', () => {
     lightbox.style.display = 'none';
 });
 
-// Fecha ao clicar fora da imagem
+// Close when clicked out of the image
 lightbox.addEventListener('click', e => {
     if (e.target === lightbox) {
         lightbox.style.display = 'none';

@@ -1,41 +1,66 @@
-const gallery = document.getElementById('gallery');
-const lightbox = document.getElementById('lightbox');
-const lbImg = lightbox.querySelector('img');
-const closeBtn = lightbox.querySelector('.close');
+// Get main elements from the page
+const gallery = document.getElementById('gallery'); // the gallery container
+const lightbox = document.getElementById('lightbox'); // the overlay/lightbox
+const lbImg = lightbox.querySelector('img'); // the image inside the lightbox
+const closeBtn = lightbox.querySelector('.close'); // the close button
+const prevBtn = lightbox.querySelector('.prev'); // the previous foto button
+const nextBtn = lightbox.querySelector('.next'); // the next foto button
 
-const fotos = [
-    '../gallery/WeddingA/photo1.jpg',
-    '../gallery/WeddingA/photo2.jpg',
-    '../gallery/WeddingA/photo3.jpg',
-    '../gallery/WeddingA/photo4.jpg',
-    '../gallery/WeddingA/photo5.jpg',
-    '../gallery/WeddingA/photo6.jpg',
-    '../gallery/WeddingA/photo7.jpg',
-    '../gallery/WeddingA/photo8.jpg',
-    '../gallery/WeddingA/photo9.jpg'
+// List of image file paths
+const photos = [
+    '../gallery/WeddingC/photo1.jpg',
+    '../gallery/WeddingC/photo2.jpg',
+    '../gallery/WeddingC/photo3.jpg',
+    '../gallery/WeddingC/photo4.jpg',
+    '../gallery/WeddingC/photo5.jpg',
+    '../gallery/WeddingC/photo6.jpg',
+    '../gallery/WeddingC/photo7.jpg'
 ];
+let currentIndex = 0;
 
-// Adiciona imagens à galeria
-fotos.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    gallery.appendChild(img);
+// Function to open lightbox with clicked image
+function openLightbox(index) {
+    currentIndex = index;      // salva o índice
+    lbImg.src = photos[index]; // mostra a foto
+    lightbox.style.display = 'flex';
+}
 
-    // Abre lightbox ao clicar
-    img.addEventListener('click', () => {
-        lbImg.src = src;
-        lightbox.style.display = 'flex';
-    });
-});
-
-// Fecha ao clicar no X
-closeBtn.addEventListener('click', () => {
+// Function to close lightbox
+function closeLightbox() {
     lightbox.style.display = 'none';
+}
+
+// Function to show next photo lightbox
+function showNext() {
+    currentIndex = (currentIndex + 1) % photos.length; 
+    lbImg.src = photos[currentIndex];
+}
+
+// Function to show previous photo lightbox
+function showPrev() {
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    lbImg.src = photos[currentIndex];
+}
+
+// Fill gallery with images and add click events
+photos.forEach((src, i) => {
+    const img = document.createElement('img'); 
+    img.src = src; 
+    img.addEventListener('click', () => openLightbox(i)); 
+    gallery.appendChild(img); 
 });
 
-// Fecha ao clicar fora da imagem
+
+// events lightbox
+
+// Close lightbox when clicking X button
+closeBtn.addEventListener('click', closeLightbox);
+
+// Close lightbox when clicking outside the image
 lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-    }
+    if (e.target === lightbox) closeLightbox();
 });
+
+// 
+prevBtn.addEventListener('click', showPrev);
+nextBtn.addEventListener('click', showNext);
