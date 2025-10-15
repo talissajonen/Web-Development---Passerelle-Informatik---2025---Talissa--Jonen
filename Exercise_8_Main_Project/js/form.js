@@ -35,7 +35,7 @@ form.onsubmit = function(event) {
   fetch('/send', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
+    body: JSON.stringify({ // turns the data into a JSON text
       name: name,
       phone: phone,
       email: email,
@@ -47,10 +47,10 @@ form.onsubmit = function(event) {
     if (data.success) {
       result.style.color = "green";
       result.innerText = data.message;
-      form.reset(); // clear the form
+      form.reset(); // If it is success, show the message in green and clear the form
     } else {
       result.style.color = "red";
-      result.innerText = data.message;
+      result.innerText = data.message;   // If the server responds but indicates failure, show the error message in re
     }
   })
   .catch(error => { // catch any network or server errors

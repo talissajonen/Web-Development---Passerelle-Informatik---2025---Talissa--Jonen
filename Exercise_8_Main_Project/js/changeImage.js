@@ -16,7 +16,7 @@ let count = 0; // Current image index - Keeps track of which photo is currently 
 function nextPic() {
     mainPic.style.opacity = 0; // Fade out
     setTimeout(() => {
-        count = (count + 1) % fotos.length; // Move to next image, loop back to start
+        count = (count + 1) % fotos.length; // Move to next image, *loop back to start*
         mainPic.src = fotos[count]; // Update image source
         mainPic.style.opacity = 1; // Fade in
     }, 500); // Delay for fade transition
