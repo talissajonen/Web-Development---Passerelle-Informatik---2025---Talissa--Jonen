@@ -4,9 +4,9 @@ let result = document.getElementById('result');
 
 // Add an event listener for form submission
 form.onsubmit = function(event) {
-  event.preventDefault(); // prevents the page from reloading
+  event.preventDefault(); // When the form is submitted, run this function and prevent page reload
 
-  // Get the values from the inputs and cut with trim the spaces in the beggining and end
+ // Get the user input values and remove extra spaces from start and end
   let name = document.getElementById('nameid').value.trim();
   let phone = document.getElementById('phoneid').value.trim();
   let email = document.getElementById('emailid').value.trim();
@@ -19,7 +19,7 @@ form.onsubmit = function(event) {
     return; // stop the function if validation fails
   }
 
-  // Simple email validation using regex
+  // Simple email validation using regex and show error if not
   let emailCheck = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
   if (!email.match(emailCheck)) {
     result.style.color = "red";
@@ -27,11 +27,11 @@ form.onsubmit = function(event) {
     return;
   }
 
-  // Show a "sending" message while the data is sent
+// Display a temporary "sending..." message
   result.style.color = "black";
   result.innerText = "Sending message...";
 
-  // Send the form data to the server using fetch
+// Send the form data to the server as JSON using POST
   fetch('/send', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -41,7 +41,7 @@ form.onsubmit = function(event) {
       email: email,
       message: message
     })
-  })
+  }) // Handle server response: show success in green and reset form, or show error in red
   .then(res => res.json()) // convert response to JSON
   .then(data => {
     if (data.success) {
@@ -50,7 +50,7 @@ form.onsubmit = function(event) {
       form.reset(); // If it is success, show the message in green and clear the form
     } else {
       result.style.color = "red";
-      result.innerText = data.message;   // If the server responds but indicates failure, show the error message in re
+      result.innerText = data.message;  // If the server responds but indicates failure, show the error message in re
     }
   })
   .catch(error => { // catch any network or server errors
