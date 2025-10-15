@@ -1,0 +1,25 @@
+{
+  "name": "web-development---passerelle-informatik---2025---talissa--jonen",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000W\u0000e\u0000b\u0000_\u0000D\u0000e\u0000v\u0000e\u0000l\u0000o\u0000p\u0000m\u0000e\u0000n\u0000t\u0000-\u0000P\u0000a\u0000s\u0000s\u0000e\u0000r\u0000e\u0000l\u0000l\u0000e\u0000-\u0000I\u0000n\u0000f\u0000o\u0000r\u0000m\u0000a\u0000t\u0000i\u0000k\u0000-\u00002\u00000\u00002\u00005\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talissajonen/Web-Development---Passerelle-Informatik---2025---Talissa--Jonen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/talissajonen/Web-Development---Passerelle-Informatik---2025---Talissa--Jonen/issues"
+  },
+  "homepage": "https://github.com/talissajonen/Web-Development---Passerelle-Informatik---2025---Talissa--Jonen#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
